@@ -18,7 +18,7 @@ public class StudentRepository {
 
     //pehle initilize krdo warna null pointer exception dega
    public StudentRepository() {
-        super();
+
         this.studentMap = new HashMap<String, Student>();
         this.teacherMap = new HashMap<String, Teacher>();
         this.studentTeacherMapping = new  HashMap<String, List<String>>();
@@ -116,6 +116,7 @@ public class StudentRepository {
     public void deleteAllData() {
 
        HashSet<String> set = new HashSet<>();
+        teacherMap = new HashMap<>();
 
        for (String teacher: studentTeacherMapping.keySet()) {
 
@@ -131,6 +132,6 @@ public class StudentRepository {
         }
 
         studentTeacherMapping = new HashMap<>();
-        teacherMap = new HashMap<>();
+
     }
 }
