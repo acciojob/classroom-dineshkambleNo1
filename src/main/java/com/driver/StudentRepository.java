@@ -57,12 +57,13 @@ public class StudentRepository {
 
     // yaha pr ekk dikat h
     public Student getStudent(String name) {
-
-       return studentMap.get(name);
+        if(studentMap.containsKey(name))  return studentMap.get(name);
+        else return null;
     }
 
     public Teacher getTeacherName(String name) {
-       return teacherMap.get(name);
+       if(teacherMap.containsKey(name)) return teacherMap.get(name);
+       else return null;
     }
 
 
@@ -103,7 +104,7 @@ public class StudentRepository {
 
 
        }
-       // yaha galat hogaaa
+
 
        if(teacherMap.containsKey(teacher))
        {
