@@ -6,6 +6,8 @@ public class Student {
     private int age;
     private double averageScore;
 
+
+
     //construtor for student name , age , avgScore
     public Student(String name, int age, double averageScore) {
         this.name = name;

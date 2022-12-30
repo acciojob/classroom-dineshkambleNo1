@@ -18,6 +18,7 @@ public class StudentRepository {
 
     //pehle initilize krdo warna null pointer exception dega
    public StudentRepository() {
+        super();
         this.studentMap = new HashMap<String, Student>();
         this.teacherMap = new HashMap<String, Teacher>();
         this.studentTeacherMapping = new  HashMap<String, List<String>>();
@@ -54,7 +55,9 @@ public class StudentRepository {
     }
 
 
+    // yaha pr ekk dikat h
     public Student getStudent(String name) {
+
        return studentMap.get(name);
     }
 
@@ -77,20 +80,20 @@ public class StudentRepository {
 
     public void deleteTeacherByName(String teacher) {
 
-       List<String> teachers = new ArrayList<String>();
+       List<String> students = new ArrayList<String>();
 
        if(studentTeacherMapping.containsKey(teacher)){
 
            // pehle toh student pata krlo specific teacher k
 
-           teachers = studentTeacherMapping.get(teacher);
+           students = studentTeacherMapping.get(teacher);
 
            // fir teachers delete krdooo
 
-           for (String t: teachers) {
-                if(teacherMap.containsKey(t))
+           for (String student: students) {
+                if(studentMap.containsKey(student))
                 {
-                    teacherMap.remove(t);
+                    studentMap.remove(student);
                 }
            }
 
@@ -102,9 +105,9 @@ public class StudentRepository {
        }
        // yaha galat hogaaa
 
-       if(studentMap.containsKey(teacher))
+       if(teacherMap.containsKey(teacher))
        {
-           studentMap.remove(teacher);
+           teacherMap.remove(teacher);
        }
     }
 
@@ -113,21 +116,20 @@ public class StudentRepository {
 
        HashSet<String> set = new HashSet<>();
 
-       teacherMap = new HashMap<>();
+       for (String teacher: studentTeacherMapping.keySet()) {
 
-        for (String students: studentTeacherMapping.keySet()) {
-
-            for(String teachers : studentTeacherMapping.get(students)){
-                set.add(teachers);
+            for(String student : studentTeacherMapping.get(teacher)){
+                set.add(student);
             }
         }
 
-        for (String teachers: set ) {
-            if(studentMap.containsKey(teachers)){
-                studentMap.remove(teachers);
+        for (String student: set ) {
+            if(studentMap.containsKey(student)){
+                studentMap.remove(student);
             }
         }
 
         studentTeacherMapping = new HashMap<>();
+        teacherMap = new HashMap<>();
     }
 }
