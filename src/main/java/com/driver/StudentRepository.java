@@ -8,13 +8,13 @@ import java.util.*;
 public class StudentRepository {
 
     // student ka details rekhega
-     HashMap<String, Student> studentMap = new HashMap<>();
+     private HashMap<String, Student> studentMap = new HashMap<>();
 
     // teacher ka details rekhega
-     HashMap<String, Teacher> teacherMap =  new HashMap<>();
+    private HashMap<String, Teacher> teacherMap =  new HashMap<>();
 
     // student-teacher ka details rekhega
-     HashMap<String, List<String>> studentTeacherMapping = new HashMap<>();
+    private HashMap<String, List<String>> studentTeacherMapping = new HashMap<>();
 
     //pehle initilize krdo warna null pointer exception dega
 
@@ -64,8 +64,10 @@ public class StudentRepository {
     public List<String> findStudentsFromTeacher(String teacher) {
 
        List<String> studentList = new ArrayList<>();
+       String s;
 
-       if(studentTeacherMapping.containsKey(teacher)) studentList = studentTeacherMapping.get(teacher);
+       if(studentTeacherMapping.containsKey(teacher))
+           studentList.add(String.valueOf(studentTeacherMapping.get(teacher)));
        return studentList;
     }
 
