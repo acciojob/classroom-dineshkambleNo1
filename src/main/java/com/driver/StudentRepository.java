@@ -116,7 +116,7 @@ public class StudentRepository {
     public void deleteAllData() {
 
        HashSet<String> set = new HashSet<>();
-        teacherMap = new HashMap<>();
+        //teacherMap = new HashMap<>();
 
        for (String teacher: studentTeacherMapping.keySet()) {
 
