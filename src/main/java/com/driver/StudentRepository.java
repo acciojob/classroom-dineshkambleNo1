@@ -8,13 +8,13 @@ import java.util.*;
 public class StudentRepository {
 
     // student ka details rekhega
-    private HashMap<String, Student> studentMap;
+     HashMap<String, Student> studentMap;
 
     // teacher ka details rekhega
-    private HashMap<String, Teacher> teacherMap;
+     HashMap<String, Teacher> teacherMap;
 
     // student-teacher ka details rekhega
-    private HashMap<String, List<String>> studentTeacherMapping;
+     HashMap<String, List<String>> studentTeacherMapping;
 
     //pehle initilize krdo warna null pointer exception dega
    public StudentRepository() {

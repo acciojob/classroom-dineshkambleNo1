@@ -12,16 +12,6 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 
-		/*
-			Add a new student to the classroom.
-			Add a new teacher to the classroom.
-			Add a student-teacher pair denoting that the student is taught by given teacher
-
-			make a controller, service and repository class with appropriate annotations
-			(Hint: Think HashMap(s))
-
-
-		 */
 
 	}
 }
