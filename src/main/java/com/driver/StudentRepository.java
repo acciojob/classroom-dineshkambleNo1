@@ -18,7 +18,7 @@ public class StudentRepository {
 
     //pehle initilize krdo warna null pointer exception dega
    public StudentRepository() {
-
+        super();
         this.studentMap = new HashMap<String, Student>();
         this.teacherMap = new HashMap<String, Teacher>();
         this.studentTeacherMapping = new  HashMap<String, List<String>>();
@@ -55,33 +55,33 @@ public class StudentRepository {
     }
 
 
-    // yaha pr ekk dikat h
-    public Student getStudent(String name) {
-        if(studentMap.containsKey(name))  return studentMap.get(name);
-        else return null;
+    // yaha pr ekk dikat ho skti h
+    public Student searchStudent(String name) {
+       return studentMap.get(name);
     }
 
+
     public Teacher getTeacherName(String name) {
-       if(teacherMap.containsKey(name)) return teacherMap.get(name);
-       else return null;
+        return teacherMap.get(name);
     }
 
 
     public List<String> findStudentsFromTeacher(String teacher) {
 
-       List<String> studentList = new ArrayList<String>();
+       List<String> studentList = new ArrayList<>();
 
        if(studentTeacherMapping.containsKey(teacher)) studentList = studentTeacherMapping.get(teacher);
        return studentList;
     }
 
     public List<String> searchAllStudents() {
+
        return new ArrayList<>(studentMap.keySet());
     }
 
     public void deleteTeacherByName(String teacher) {
 
-       List<String> students = new ArrayList<String>();
+       List<String> students = new ArrayList<>();
 
        if(studentTeacherMapping.containsKey(teacher)){
 
@@ -134,4 +134,6 @@ public class StudentRepository {
         studentTeacherMapping = new HashMap<>();
 
     }
+
+
 }

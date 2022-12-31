@@ -8,6 +8,8 @@ public class Teacher {
 
     private int age;
 
+    public Teacher() {}
+
     //contructor for Teacher class
     public Teacher(String name, int numberOfStudents, int age) {
         this.name = name;

@@ -3,7 +3,7 @@ package com.driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class StudentService{
@@ -23,8 +23,8 @@ public class StudentService{
         studentRepository.saveStudentTeacherPair(student,teacher);
     }
 
-    public Student getName(String name) {
-        return studentRepository.getStudent(name);
+    public Student getStudent(String name) {
+        return studentRepository.searchStudent(name);
     }
 
     public Teacher getTeacherName(String name) {
@@ -46,4 +46,6 @@ public class StudentService{
     public void deleteAllData() {
         studentRepository.deleteAllData();
     }
+
+
 }
