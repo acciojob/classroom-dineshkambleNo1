@@ -131,7 +131,7 @@ public class StudentRepository {
             }
         }
 
-        studentTeacherMapping = new HashMap<>();
+        //studentTeacherMapping = new HashMap<>();
 
     }
 
