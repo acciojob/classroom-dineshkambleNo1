@@ -43,14 +43,16 @@ public class StudentController {
     @GetMapping("/get-student-by-name/{name}")
     public ResponseEntity<Student> getStudentByName(@PathVariable String name){
          // Assign student by calling service layer method
-        Student student = studentService.getStudent(name);
+        Student student = null;
+        student = studentService.getStudent(name);
         return new ResponseEntity<>(student, HttpStatus.CREATED);
     }
 
     @GetMapping("/get-teacher-by-name/{name}")
     public ResponseEntity<Teacher> getTeacherByName(@PathVariable String name){
-        // Assign student by calling service layer method
-       Teacher teacher = studentService.getTeacherName(name);
+        // Assign student by calling service lay
+        Teacher teacher = null;
+        teacher = studentService.getTeacherName(name);
         return new ResponseEntity<>(teacher, HttpStatus.CREATED);
     }
 

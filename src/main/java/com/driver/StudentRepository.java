@@ -8,21 +8,16 @@ import java.util.*;
 public class StudentRepository {
 
     // student ka details rekhega
-     HashMap<String, Student> studentMap;
+     HashMap<String, Student> studentMap = new HashMap<>();
 
     // teacher ka details rekhega
-     HashMap<String, Teacher> teacherMap;
+     HashMap<String, Teacher> teacherMap =  new HashMap<>();
 
     // student-teacher ka details rekhega
-     HashMap<String, List<String>> studentTeacherMapping;
+     HashMap<String, List<String>> studentTeacherMapping = new HashMap<>();
 
     //pehle initilize krdo warna null pointer exception dega
-   public StudentRepository() {
-        super();
-        this.studentMap = new HashMap<String, Student>();
-        this.teacherMap = new HashMap<String, Teacher>();
-        this.studentTeacherMapping = new  HashMap<String, List<String>>();
-    }
+
 
     public  void saveStudent(Student student) {
 
@@ -76,7 +71,12 @@ public class StudentRepository {
 
     public List<String> searchAllStudents() {
 
-       return new ArrayList<>(studentMap.keySet());
+      List<String > students= new ArrayList<>();
+
+      for(String student : studentMap.keySet()){
+          students.add(student);
+      }
+      return students;
     }
 
     public void deleteTeacherByName(String teacher) {
